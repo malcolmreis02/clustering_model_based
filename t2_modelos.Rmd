@@ -89,12 +89,7 @@ set.seed(123456) # semente aleatoria
 s1.sermil2022cps <- sermil2022cps %>% slice_sample(n = 200)
 ```
 
-```{r observando_comportamento, fig.height = 3, fig.width = 5, fig.cap="Diagrama de dispersão das variáveis"}
-s1.sermil2022cps %>%
-  ggplot(aes(x = PESO, y = ALTURA)) +
-  geom_point() +
-  theme_classic() # + geom_density2d()
-
+```{r observando_comportamento}
 #summary(s1.sermil2022cps)
 ```
 
@@ -110,9 +105,10 @@ Média      & 73.44  & 175.3  \\
 3o Quartil & 80.00  & 180.0  \\
 Máximo     & 146.00 & 198.0  \\ \hline
 \end{tabular}
+\label{Medidas de dispersão dos dados}
 \end{table}
 
-```{r grafico_pares, fig.height = 3, fig.width = 5, fig.cap="Gráfico de pares das variáveis"}
+```{r grafico_pares, fig.height = 3, fig.width = 5, fig.cap="Gráfico de pares das variáveis", warning=F}
 ggpairs(s1.sermil2022cps) + theme_bw()
 ```
 
